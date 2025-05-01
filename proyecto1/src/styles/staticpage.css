@@ -1,0 +1,50 @@
+.main-wrapper {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .hero-section {
+    padding: 40px 0 20px;
+    background-color: #fff;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  .content-section {
+    padding: 30px 0;
+    background-color: #fff;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .wysiwyg {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #474747;
+  }
+  
+  .hero-image {
+    margin-bottom: 2rem;
+  }
+  
+  .hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .content-article p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+  }
+  
