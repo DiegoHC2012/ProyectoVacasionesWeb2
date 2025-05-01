@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function CharacterSearch() {
   const [filters, setFilters] = useState({
@@ -31,45 +32,30 @@ function CharacterSearch() {
       .catch(err => console.error(err));
   };
 
+  const getStatusIcon = (status, species) => {
+    let icon;
+    switch (status.toLowerCase()) {
+      case 'alive': icon = '🟢 Alive'; break;
+      case 'dead': icon = '🔴 Dead'; break;
+      default: icon = '⚪ Unknown';
+    }
+    return `${icon} - ${species}`;
+  };
+
   return (
-    <div style={{ padding: '1rem' }}>
+    <div className="container" style={{ padding: '2rem' }}>
       <h1>Buscar Personajes</h1>
 
       <form onSubmit={handleSubmit} style={{ marginBottom: '2rem' }}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Nombre"
-          value={filters.name}
-          onChange={handleChange}
-          style={{ marginRight: '0.5rem' }}
-        />
-
+        <input type="text" name="name" placeholder="Nombre" value={filters.name} onChange={handleChange} style={{ marginRight: '0.5rem' }} />
         <select name="status" value={filters.status} onChange={handleChange} style={{ marginRight: '0.5rem' }}>
           <option value="">Estado</option>
           <option value="alive">Alive</option>
           <option value="dead">Dead</option>
           <option value="unknown">Unknown</option>
         </select>
-
-        <input
-          type="text"
-          name="species"
-          placeholder="Especie"
-          value={filters.species}
-          onChange={handleChange}
-          style={{ marginRight: '0.5rem' }}
-        />
-
-        <input
-          type="text"
-          name="type"
-          placeholder="Tipo"
-          value={filters.type}
-          onChange={handleChange}
-          style={{ marginRight: '0.5rem' }}
-        />
-
+        <input type="text" name="species" placeholder="Especie" value={filters.species} onChange={handleChange} style={{ marginRight: '0.5rem' }} />
+        <input type="text" name="type" placeholder="Tipo" value={filters.type} onChange={handleChange} style={{ marginRight: '0.5rem' }} />
         <select name="gender" value={filters.gender} onChange={handleChange} style={{ marginRight: '0.5rem' }}>
           <option value="">Género</option>
           <option value="female">Female</option>
@@ -77,18 +63,21 @@ function CharacterSearch() {
           <option value="genderless">Genderless</option>
           <option value="unknown">Unknown</option>
         </select>
-
         <button type="submit">Buscar</button>
       </form>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
         {characters.map(character => (
-          <div key={character.id} style={{ border: '1px solid #ccc', padding: '1rem', width: '250px' }}>
-            <img src={character.image} alt={character.name} style={{ width: '100%' }} />
-            <h4>{character.name}</h4>
-            <p><strong>Status:</strong> {character.status}</p>
-            <p><strong>Species:</strong> {character.species}</p>
-            <p><strong>Gender:</strong> {character.gender}</p>
+          <div key={character.id} style={{ display: 'flex', backgroundColor: '#f9f9f9', padding: '1rem', borderRadius: '8px', alignItems: 'center' }}>
+            <img src={character.image} alt={character.name} style={{ width: '120px', borderRadius: '8px', marginRight: '1rem' }} />
+            <div style={{ flex: 1 }}>
+              <h4>{character.name}</h4>
+              <p>{getStatusIcon(character.status, character.species)}</p>
+              <p><strong>Location:</strong><br />{character.location?.name}</p>
+              <Link to={`/character/${character.id}`}>
+                <button style={{ marginTop: '0.5rem' }}>Ver Detalles</button>
+              </Link>
+            </div>
           </div>
         ))}
       </div>

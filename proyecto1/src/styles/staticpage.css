@@ -1,50 +1,196 @@
-.main-wrapper {
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .hero-section {
-    padding: 40px 0 20px;
-    background-color: #fff;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    text-align: center;
-    color: #333;
-    margin-bottom: 1.5rem;
-  }
-  
-  .content-section {
-    padding: 30px 0;
-    background-color: #fff;
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .wysiwyg {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #474747;
-  }
-  
-  .hero-image {
-    margin-bottom: 2rem;
-  }
-  
-  .hero-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .content-article p {
-    margin-bottom: 1.5rem;
-    font-size: 1.05rem;
-  }
-  
+/* staticpage.css mejorado */
+
+.extra-wrapper {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  background-color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+  height: 60px;
+  object-fit: contain;
+}
+
+.hamburguesa {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.botones-header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.dropdown {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.telefono img {
+  height: 1rem;
+  margin-right: 0.3rem;
+}
+
+.body {
+  padding-bottom: 5rem;
+}
+
+.banner {
+  display: flex;
+  background-color: black;
+  color: white;
+  height: 40rem;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.boton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.boton button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.boton button:hover {
+  background-color: #333;
+}
+
+.boton img {
+  height: 1rem;
+  width: 1rem;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  padding: 5rem 2rem;
+}
+
+.contenido img {
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contenido p {
+  width: 60%;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.footer {
+  background-color: #f7f7f7;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-img {
+  height: 100px;
+  margin-bottom: 2rem;
+}
+
+.footer-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.info {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-inputs {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-inputs input,
+.form-inputs select {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-submit {
+  padding: 0.8rem 2rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-submit:hover {
+  background-color: #333;
+}
